@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GoogleMapU4RuntimePermissionUsingFragmentXml</string>
+    <string name="google_maps_api_key">AIzaSyDtQuixz89gUvW4d51NoRh12Fp3dz7X1Ng</string>
+    
+    <plurals name="num_location_reported">
+        <item quantity="zero">No location reported</item>
+        <item quantity="one">One location reported</item>
+        <item quantity="other">%d locations reported</item>
+    </plurals>
+</resources>

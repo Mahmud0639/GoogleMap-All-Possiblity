@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/edit_bg"
+            android:paddingStart="20dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="8dp"
+            android:layout_marginBottom="3dp"
+            android:hint="Search a location"
+            app:layout_constraintBottom_toTopOf="@id/map_fragment"
+            app:layout_constraintEnd_toStartOf="@id/imageSearch"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <ImageButton
+            android:id="@+id/imageSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="13dp"
+            app:layout_constraintStart_toEndOf="@id/editText"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="@id/editText"
+            app:layout_constraintTop_toTopOf="@id/editText"/>
+        <TextView
+            android:id="@+id/locationTxt"
+            android:layout_width="0dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/map_fragment"
+            android:layout_marginBottom="5dp"
+            android:padding="7dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/editText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Current Location Address"/>
+
+        <fragment
+            android:id="@+id/map_fragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            app:layout_constraintBottom_toTopOf="@id/batchBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/locationTxt" />
+        <!--  <fragment
+              android:id="@+id/map_fragment"
+              android:layout_width="0dp"
+              android:layout_height="0dp"
+              map:cameraTargetLat="23.72828542202557"
+              map:cameraTargetLng="90.4195721833436"
+              map:cameraZoom="15"
+              map:uiRotateGestures="true"
+              map:uiZoomGestures="true"
+              map:uiTiltGestures="true"
+              map:uiScrollGestures="true"
+              map:mapType="satellite"
+              map:uiCompass="true"
+              map:cameraBearing="90"
+              map:cameraTilt="45"
+              map:liteMode="true"
+              android:name="com.google.android.gms.maps.SupportMapFragment"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTop="parent" />
+
+
+      -->
+        <!--  <FrameLayout
+              android:id="@+id/fragment_container"
+              android:layout_width="0dp"
+              android:layout_height="0dp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+      -->
+        <Button
+            android:id="@+id/batchBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/map_fragment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Batch Location"
+            android:background="#ff22"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fab"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="15dp"
+        android:src="@drawable/ic_location_on"
+        app:tint="@color/white"
+        android:contentDescription="@string/app_name" />
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
